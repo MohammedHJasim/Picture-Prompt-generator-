@@ -1,0 +1,15 @@
+/# Headers for Cloudflare Pages SPA
+# Ensure all routes return index.html with proper headers
+/*\
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  permissions-policy: geolocation=(), microphone=()
+
+/# Cache control for assets
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
